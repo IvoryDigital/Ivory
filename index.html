@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Desarrollo web, automatización con Python/n8n y bases de datos personalizadas para emprendedores y empresas en crecimiento." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digitaliza, Automatiza y Gana Tiempo</title>
+
+  <!-- Fuente de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet" />
+
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/cyber-button.css" />
+
+</head>
+<body>
+
+  <!-- Matrix background con baja opacidad (MOVIDO FUERA DEL HEADER) -->
+  <div class="matrix-container" style="opacity: 0.30; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+    <!-- 30 columnas Matrix -->
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+    <div class="matrix-column"></div><div class="matrix-column"></div>
+  </div>
+
+  <header style="position: relative;">
+
+  
+    <!-- Contenido visible por encima -->
+    <div style="position: relative; z-index: 10; padding: 5vw 3vw; max-width: 95%; margin: 0 auto; text-align: center; color: #fff; font-family: 'Goldman', cursive;">
+      <h1 class="shadows-into-light-regular">Digitaliza, Automatiza y Gana Tiempo</h1>
+
+      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 20px;">
+       Lleva tu negocio al siguiente nivel con páginas web modernas, bots personalizados y bases de datos en tiempo real.
+      </p>
+
+<nav>
+  <a href="#servicios" style="color: #fff; margin: 0 12px; text-decoration: none;">Servicios</a>
+  <a href="#sobre-mi" style="color: #fff; margin: 0 12px; text-decoration: none;">Sobre mí</a>
+  <a href="#contacto" style="color: #fff; margin: 0 12px; text-decoration: none;">Contacto</a>
+  <a href="juego.html" class="servicio-verde" style="margin-left: 12px;">🎮 Juego para ganar descuento</a>
+</nav>
+
+<!-- Botón WhatsApp -->
+<div style="margin-top: 15px; text-align: center;">
+  <a href="https://wa.me/56920282860" target="_blank" style="text-decoration: none;">
+    <button class="cyber-button" type="button">
+      <span data-text="💬 ¡Conversemos tu proyecto por WhatsApp!" class="glitch">💬 ¡Conversemos tu proyecto por WhatsApp!</span>
+      <span class="cyberpunk-border"></span>
+      <span class="gradient-overlay"></span>
+      <span class="scanline"></span>
+    </button>
+  </a>
+</div>
+
+  </header>
+
+<style>
+  .imagen-base {
+    max-width: 20%;
+    height: auto;
+    margin: 10px;
+    filter: brightness(1);
+    opacity: 1;
+    transition: filter 0.5s ease;
+  }
+
+  /* Animación de brillo para base2 y base3 */
+  .brillante {
+    filter: brightness(0);
+    opacity: 0;
+    animation: iluminar 6s forwards ease-in-out;
+  }
+
+  .brillante.delay-1 {
+    animation-delay: 2s;
+  }
+
+  .brillante.delay-2 {
+    animation-delay: 4s;
+  }
+
+  @keyframes iluminar {
+    0% {
+      filter: brightness(0);
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      filter: brightness(1);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animación zoom para base.png */
+  .zoom-ciclo {
+    animation: zoomInOut 2s infinite ease-in-out;
+  }
+
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+</style>
+
+<!-- Sección servicios -->
+<section>
+  <div class="servicios-contenido">
+    <section id="servicios">
+      <h2>Precios de Servicios</h2>
+
+      <!-- Encabezado con imagen -->
+      <h3>
+        <img src="image/base.png" alt="Base de Datos" class="imagen-base" style="max-width: 30px; vertical-align: middle; margin-right: 8px;">
+        Bases de Datos
+      </h3>
+
+      <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <img src="image/base2.png" alt="Bases de datos 2" class="imagen-base brillante delay-1" style="order: 1;">
+        <img src="image/base.png" alt="Bases de datos 1" class="imagen-base zoom-ciclo" style="order: 2;">
+        <img src="image/base3.png" alt="Bases de datos 3" class="imagen-base brillante delay-2" style="order: 3;">
+      </div>
+
+      <p>Las bases de datos son el corazón de cualquier sistema digital moderno. Te permiten almacenar, organizar y acceder a la información esencial para tu negocio de manera rápida y segura.</p>
+
+      <ul>
+        <li><strong><span class="servicio-verde">Simple (JSON, NoSQL):</span></strong> desde <strong>$30.000 CLP</strong><br>
+        Ideal para proyectos pequeños o startups que necesitan guardar datos básicos como listas de productos, formularios de contacto o registros simples.</li>
+
+        <li><strong><span class="servicio-verde">Relacional (SQL, compleja):</span></strong> desde <strong>$70.000 CLP</strong><br>
+        Para negocios que manejan información estructurada con múltiples tablas relacionadas.</li>
+
+        <li><strong><span class="servicio-verde">Tiempo real (Firebase, JSON):</span></strong> desde <strong>$50.000 CLP</strong><br>
+        Pensada para aplicaciones que requieren que los datos se actualicen al instante.</li>
+      </ul>
+
+      <!-- Encabezado con imagen -->
+      <h3>
+        <img src="image/pagina.png" alt="Página Web" class="imagen-base" style="max-width: 30px; vertical-align: middle; margin-right: 8px;">
+        Páginas Web
+      </h3>
+
+      <p>Tu página web es la ventana digital de tu negocio. Un buen sitio no solo debe ser atractivo, sino también funcional.</p>
+
+      <ul>
+        <li><strong><span class="servicio-verde">Página simple (1–5 secciones):</span></strong> desde <strong>$70.000 CLP</strong><br>
+        Perfecta para emprendedores que necesitan mostrar servicios, contacto y redes sociales.</li>
+
+        <li><strong><span class="servicio-verde">Página dinámica (con funciones):</span></strong> desde <strong>$120.000 CLP</strong><br>
+        Incluye formularios, animaciones, sliders, etc.</li>
+
+        <li><strong><span class="servicio-verde">Página avanzada (con login, APIs, carrito):</span></strong> desde <strong>$250.000 CLP</strong><br>
+        Para quienes necesitan usuarios registrados, carritos de compra, etc.</li>
+      </ul>
+
+      <!-- Encabezado con imagen -->
+      <h3>
+        <img src="image/bot.png" alt="Automatizadores" class="imagen-base" style="max-width: 30px; vertical-align: middle; margin-right: 8px;">
+        Automatizadores
+      </h3>
+
+      <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <img src="image/bot.png" alt="Bot 1" class="imagen-base">
+        <img src="image/bot2.png" alt="Bot 2" class="imagen-base">
+      </div>
+
+      <p>Los automatizadores permiten delegar tareas repetitivas, ahorrando tiempo y reduciendo errores.</p>
+
+      <ul>
+        <li><strong><span class="servicio-verde">Automatizador simple (n8n/Python):</span></strong> desde <strong>$30.000 CLP</strong><br>
+        Para tareas básicas como enviar correos automáticos.</li>
+
+        <li><strong><span class="servicio-verde">Automatizador con APIs:</span></strong> desde <strong>$70.000 CLP</strong><br>
+        Ideal para integrar con Telegram, WhatsApp, etc.</li>
+
+        <li><strong><span class="servicio-verde">Avanzado (con lógica y errores):</span></strong> desde <strong>$150.000 CLP</strong><br>
+        Automatizaciones complejas que toman decisiones, detectan errores y generan reportes.</li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+  <div class="container">
+    <section id="sobre-mi">
+      <h2>👨‍💻 Sobre mí</h2>
+      <p>
+        Soy un desarrollador apasionado por la tecnología y la automatización de procesos. Me especializo en crear <strong>soluciones digitales eficientes</strong>.
+      </p>
+      <p>
+        Cuento con un <strong>Diplomado en Ciencia de Datos</strong>. Mi objetivo es ayudarte a <strong>automatizar tareas y potenciar tu negocio</strong>.
+      </p>
+      <h3>🎓 Formación</h3>
+      <ul>
+        <li><strong>Diplomado en Ciencia de Datos</strong></li>
+        <li>Más de 10 <strong>cursos certificados</strong>:
+          <ul>
+            <li>Administración de servidores y bases de datos</li>
+            <li>Redes de datos y POO</li>
+            <li>Big Data y visualización</li>
+            <li>Automatización con Python y n8n</li>
+            <li>Curaduría y limpieza de datos</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>📘 Cursos destacados</h3>
+      <ul>
+        <li><strong>Marketing Gerencial</strong> – U. de Chile</li>
+        <li><strong>Gestión PYMEs</strong> – PUC</li>
+        <li><strong>Liderazgo</strong> – U. de los Andes</li>
+        <li><strong>Negociaciones</strong> – UNAM</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>📬 Contacto</h2>
+      <p>
+        ¿Tienes un proyecto o consulta?<br>
+        Escríbeme por 
+        <strong>
+          <a href="https://wa.me/56920282860" target="_blank" class="servicio-verde">WhatsApp</a>
+        </strong>.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ‑ Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Botón para abrir chatbot -->
+  <button id="chatbot-toggle-btn" title="Abrir chat">💬</button>
+
+  <!-- Contenedor del Bot -->
+  <div id="chatbot-container">
+    <div id="chatbot-messages"><!-- mensajes --></div>
+    <form id="chatbot-input" onsubmit="return false;">
+      <input type="text" id="chat-input-text" placeholder="Escribe un mensaje..." autocomplete="off" />
+      <button type="submit" id="chat-input-send">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Carga el script externo -->
+  <script src="js/chatbot.js"></script>
+
+</body>
+</html>
