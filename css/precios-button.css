@@ -1,0 +1,99 @@
+/* precios-button.css */
+/* From Uiverse.io by tarantino421, adaptado para botón toggle precios */
+
+.box {
+  --clr-shadow__border: #A8DF8E;
+  --clr-text: #F6F4EB;
+  --clr-code-line: #43ff85;
+  --clr-matrix: #020204;
+  --size: 3rem;
+  position: relative;
+  outline: 1px solid var(--clr-shadow__border);
+
+  /* Centrado del bloque */
+  max-width: 240px;
+  margin: 0 auto 20px auto; /* vertical margin bottom 20px, horizontal auto para centrar */
+
+  display: block; /* para que margin auto funcione */
+  cursor: pointer;
+  user-select: none;
+  text-align: center; /* centra contenido inline dentro */
+}
+
+.button {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.15rem;
+  color: var(--clr-text);
+  padding: calc(var(--size) / 3) var(--size);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-shadow:
+    2px 0px var(--clr-shadow__border),
+    0px 2px var(--clr-shadow__border),
+    -2px 0px var(--clr-shadow__border),
+    0px -2px var(--clr-shadow__border);
+  transition: color 0.3s ease;
+  font-family: 'Goldman', cursive;
+}
+
+.button:hover {
+  color: var(--clr-code-line);
+}
+
+/* Matrix background effect */
+
+.matrix {
+  width: auto; /* ancho automático según contenido */
+  height: 100%;
+  bottom: 0%;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  display: inline-flex; /* inline para ajustar ancho */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  background: var(--clr-matrix);
+  pointer-events: none; /* que no interfiera con clicks */
+  left: 50%; /* para centrar absoluto */
+  transform: translateX(-50%);
+}
+
+.box:hover .matrix {
+  opacity: 1;
+}
+
+.code-line {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: 0.5s;
+  min-height: 0.6rem;
+  min-width: 0.6rem;
+  animation: matrix-animation calc(.2s * var(--i)) linear infinite;
+}
+
+.code {
+  text-shadow: 20px 100px var(--clr-code-line), -20px -50px var(--clr-code-line);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--clr-code-line);
+  opacity: 0.5;
+}
+
+.code:first-child {
+  color: var(--clr-text);
+  opacity: 1;
+}
+
+@keyframes matrix-animation {
+  0% {
+    transform: translateY(calc(-50% * var(--i)));
+  }
+  100% {
+    transform: translateY(calc(50% * var(--i)));
+  }
+}
