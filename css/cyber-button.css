@@ -1,0 +1,115 @@
+.cyber-button {
+  position: relative;
+  background: #25D366; /* fondo verde WhatsApp */
+  color: #ffffff; /* texto blanco */
+  font-weight: bold;
+  font-size: 1em;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Goldman', monospace;
+  letter-spacing: 1px;
+  z-index: 1;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #25D366, 0 0 20px #1ebe5d inset;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cyber-button:hover {
+  background: #1ebe5d;
+  box-shadow: 0 0 15px #25D366, 0 0 25px #1ebe5d inset;
+}
+
+.cyber-button .glitch {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.cyber-button .glitch::before,
+.cyber-button .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #b2f2b6; /* verde claro para glitch */
+  background: transparent;
+  pointer-events: none;
+}
+
+.cyber-button .glitch::before {
+  animation: glitchTop 1s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.cyber-button .glitch::after {
+  animation: glitchBottom 1s infinite linear alternate-reverse;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  color: #8de78d; /* otro tono de verde para glitch */
+}
+
+@keyframes glitchTop {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(-1px, 1px);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    transform: translate(1px, -1px);
+  }
+}
+
+.cyber-button .cyberpunk-border {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 2px solid #25D366;
+  box-shadow: 0 0 5px #25D366, 0 0 10px #25D366;
+  z-index: -1;
+}
+
+.cyber-button .gradient-overlay {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37,211,102,0.3), transparent);
+  animation: moveGradient 2.5s infinite;
+  z-index: -2;
+}
+
+@keyframes moveGradient {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.cyber-button .scanline {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background: #25D366;
+  animation: scanline 2.5s infinite linear;
+  z-index: -2;
+}
+
+@keyframes scanline {
+  0% { top: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}

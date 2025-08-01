@@ -1,0 +1,159 @@
+/* Juego.css - estilos para la página de juego */
+
+/* Estilo para que el canvas ocupe toda la pantalla detrás */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: black;
+}
+
+/* Estilos para texto y contenido principal */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Shadows Into Light', cursive;
+  color: #00ff00;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 2rem 1rem 3rem 1rem; /* reduce padding lateral para móviles */
+}
+
+h1.shadows-into-light-regular {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ff00;
+  user-select: none;
+  text-align: center;
+  max-width: 90vw;
+}
+
+p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+/* Contenedor del chat */
+#chatbot-container {
+  width: 100%;
+  max-width: 600px;
+  background: #001a00;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  user-select: none;
+}
+
+/* Área donde salen los mensajes */
+#chatbot-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Mensajes individuales */
+.mensaje {
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/* Mensajes del bot */
+.mensaje.bot {
+  background-color: #004d00;
+  color: #00ff00;
+  align-self: flex-start;
+  box-shadow: 0 0 8px #00ff00;
+}
+
+/* Mensajes del usuario */
+.mensaje.user {
+  background-color: #00ff00;
+  color: #001a00;
+  align-self: flex-end;
+  box-shadow: 0 0 8px #00ff00;
+}
+
+/* Formulario chat */
+#chatbot-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Input chat */
+#chatbot-input {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  border: 1px solid #00ff00;
+  background-color: #001a00;
+  color: #00ff00;
+  outline: none;
+}
+
+/* Input focus */
+#chatbot-input:focus {
+  border-color: #33ff33;
+  box-shadow: 0 0 8px #33ff33;
+}
+
+/* Botón enviar */
+#chatbot-send {
+  background-color: #00ff00;
+  border: none;
+  color: #001a00;
+  font-weight: bold;
+  padding: 0 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#chatbot-send:hover {
+  background-color: #33ff33;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  body, html {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+
+  h1.shadows-into-light-regular {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  #chatbot-container {
+    height: 350px;
+  }
+
+  #chatbot-input {
+    font-size: 1rem;
+  }
+}
