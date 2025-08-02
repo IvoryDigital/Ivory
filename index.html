@@ -16,10 +16,57 @@
   <link rel="stylesheet" href="css/cyber-button.css" />
   <link rel="stylesheet" href="css/precios-button.css" />
 
+  <!-- ✅ Estilos específicos para el botón del chatbot -->
+  <style>
+    #chatbot-button-container {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      z-index: 1000;
+    }
 
+    #chatbot-button-container img {
+      width: 50px;
+      height: 50px;
+      transform: translateX(1px); /* Empuja solo la imagen a la derecha */
+    }
+
+    #chatbot-toggle-btn {
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #0cb411;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 📱 Estilos para pantallas pequeñas (celular) */
+    @media (max-width: 600px) {
+      #chatbot-button-container {
+        bottom: 60px;
+        right: 10px;
+        gap: 12px;
+      }
+
+      #chatbot-button-container img {
+        width: 40px;
+        height: 40px;
+        transform: translateX(5px);
+      }
+
+      #chatbot-toggle-btn {
+        font-size: 16px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- Matrix background con baja opacidad (MOVIDO FUERA DEL HEADER) -->
   <div class="matrix-container" style="opacity: 0.30; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
     <!-- 30 columnas Matrix -->
@@ -300,8 +347,8 @@
     <p>&copy; 2025 ‑ Todos los derechos reservados</p>
   </footer>
 
-<div id="chatbot-button-container" style="position: fixed; bottom: 80px; right: 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 1000;">
-  <img src="image/chat-bot.png" alt="Notificación Chatbot" style="width: 50px; height: 50px; transform: translateX(4px);" /> <!-- # Imagen movida a la derecha -->
+<div id="chatbot-button-container">
+  <img src="image/chat-bot.png" alt="Notificación Chatbot" />
   <button id="chatbot-toggle-btn" title="Abrir chat">💬</button>
 </div>
 
@@ -319,5 +366,3 @@
 
 </body>
 </html>
-
-
