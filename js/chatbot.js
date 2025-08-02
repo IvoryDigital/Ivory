@@ -5,6 +5,9 @@ const messagesContainer = document.getElementById('chatbot-messages');
 const input = document.getElementById('chat-input-text');
 const sendBtn = document.getElementById('chat-input-send');
 
+// Referencia segura a la imagen de notificación dentro del contenedor del botón
+const chatNotifImg = document.querySelector('#chatbot-button-container img') || null;
+
 // Crear botón cerrar dentro del chatbot
 const closeBtn = document.createElement('button');
 closeBtn.textContent = '✖';
@@ -21,9 +24,10 @@ closeBtn.style.cursor = 'pointer';
 chatbotContainer.style.position = 'fixed';
 chatbotContainer.appendChild(closeBtn);
 
-// Estado inicial: chat oculto, botón visible
+// Estado inicial: chat oculto, botón visible, imagen visible
 chatbotContainer.style.display = 'none';
 toggleBtn.style.display = 'flex';
+if (chatNotifImg) chatNotifImg.style.display = 'block';
 
 function addMessage(sender, text) {
   const msg = document.createElement('div');
@@ -36,6 +40,13 @@ function addMessage(sender, text) {
 toggleBtn.addEventListener('click', () => {
   chatbotContainer.style.display = 'flex';
   toggleBtn.style.display = 'none';
+  if (chatNotifImg) {
+    try {
+      chatNotifImg.style.display = 'none'; // Ocultar imagen sin riesgo de error
+    } catch (e) {
+      console.error("Error ocultando imagen:", e);
+    }
+  }
   input.focus();
 });
 
@@ -43,6 +54,13 @@ closeBtn.addEventListener('click', () => {
   chatbotContainer.style.display = 'none';
   toggleBtn.style.display = 'flex';
   input.value = '';
+  if (chatNotifImg) {
+    try {
+      chatNotifImg.style.display = 'block'; // Mostrar imagen sin riesgo de error
+    } catch (e) {
+      console.error("Error mostrando imagen:", e);
+    }
+  }
 });
 
 sendBtn.addEventListener('click', () => {
