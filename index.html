@@ -32,7 +32,7 @@
     #chatbot-button-container img {
       width: 50px;
       height: 50px;
-      transform: translateX(0px); /* Empuja solo la imagen a la derecha */
+      margin-bottom: 10px;
     }
 
     #chatbot-toggle-btn {
@@ -43,21 +43,23 @@
       color: white;
       border: none;
       cursor: pointer;
+      font-family: 'Goldman', cursive;
     }
 
     /* 📱 Estilos para pantallas pequeñas (celular) */
     @media (max-width: 600px) {
       #chatbot-button-container {
-        top: 10px;
         bottom: 50px;
         right: 10px;
         gap: 12px;
+        top: auto;
       }
 
       #chatbot-button-container img {
         width: 50px;
         height: 50px;
-        transform: translate(-4px, 635px);
+        margin-bottom: 8px;
+        transform: translateY(0); /* Evita movimientos forzados */
       }
 
       #chatbot-toggle-btn {
@@ -67,6 +69,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Matrix background con baja opacidad (MOVIDO FUERA DEL HEADER) -->
   <div class="matrix-container" style="opacity: 0.30; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
@@ -457,13 +460,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
