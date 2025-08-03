@@ -10,7 +10,7 @@
   animation: shift-ebonny 1.2s ease-in-out infinite alternate;
   display: inline-block;
   
-  margin-top: 40px; /* <-- Aquí agregamos margen superior para separar el texto */
+  margin-top: 20px; /* <-- Aquí agregamos margen superior para separar el texto */
 }
 
 .ebonny-glitch:before,
