@@ -82,7 +82,7 @@ async function sendMessage() {
   input.value = '';
 
   // Muestra "Escribiendo..." mientras espera respuesta
-  addMessage('Bot', 'Escribiendo...');
+  addMessage('Ebonny', 'Escribiendo...');
 
   try {
     const response = await fetch('https://ivory-180693770083.europe-west1.run.app', {
@@ -100,21 +100,21 @@ async function sendMessage() {
     const data = await response.json();
 
     // Elimina el "Escribiendo..." anterior
-    const writingMsg = [...messagesContainer.children].find(div => div.textContent === 'Bot: Escribiendo...');
+    const writingMsg = [...messagesContainer.children].find(div => div.textContent === 'Ebonny: Escribiendo...');
     if (writingMsg) messagesContainer.removeChild(writingMsg);
 
     if (data.respuesta) {
-      addMessage('Bot', data.respuesta);
+      addMessage('Ebonny', data.respuesta);
     } else if (data.error) {
-      addMessage('Bot', 'Error del servidor: ' + data.error);
+      addMessage('Ebonny', 'Error del servidor: ' + data.error);
     } else {
-      addMessage('Bot', 'Respuesta inesperada del servidor.');
+      addMessage('Ebonny', 'Respuesta inesperada del servidor.');
     }
   } catch (error) {
     // Elimina el "Escribiendo..." anterior
-    const writingMsg = [...messagesContainer.children].find(div => div.textContent === 'Bot: Escribiendo...');
+    const writingMsg = [...messagesContainer.children].find(div => div.textContent === 'Ebonny: Escribiendo...');
     if (writingMsg) messagesContainer.removeChild(writingMsg);
 
-    addMessage('Bot', 'Error al comunicarse con el servidor: ' + error.message);
+    addMessage('Ebonny', 'Error al comunicarse con el servidor: ' + error.message);
   }
 }
