@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego para Ganar Descuento</title>
+
+  <!-- Fuente de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/juego.css" />
+</head>
+<body>
+
+  <!-- Canvas para efecto Matrix -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <header>
+    <h1 class="shadows-into-light-regular">🎮 Juego para Ganar Descuento</h1>
+    <p>Una sola palabra te dará un 35% de descuento. ¿Podrás descubrirla?</p>
+  </header>
+
+  <!-- Contenedor del chat -->
+  <div id="chatbot-container">
+    <div id="chatbot-messages"><!-- Aquí aparecerán los mensajes --></div>
+    <form id="chatbot-form" onsubmit="return false;">
+      <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." autocomplete="off" />
+      <button type="submit" id="chatbot-send">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    // 🎥 Efecto Matrix
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = '田由甲申电甴男甸甶甹町画甼甽甾甿畀畁畂畃界畍畎畏畐畑'.split('');
+    const fontSize = 20;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(0);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // 💬 Chatbot
+    const chatMessages = document.getElementById('chatbot-messages');
+    const chatForm = document.getElementById('chatbot-form');
+    const chatInput = document.getElementById('chatbot-input');
+
+    let juegoActivo = true;
+
+    function agregarMensaje(texto, tipo) {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.classList.add('mensaje', tipo);
+      mensajeDiv.textContent = texto;
+      chatMessages.appendChild(mensajeDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Mensaje de bienvenida
+    agregarMensaje('🧠 Bienvenido al juego. Solo hay UNA palabra correcta que te hará ganar un 35% de descuento.', 'bot');
+    agregarMensaje('Si no sabes cuál es, puedes preguntarle a Ebonny. Intenta adivinar la palabra secreta...', 'bot');
+
+    chatForm.addEventListener('submit', () => {
+      const mensajeUsuario = chatInput.value.trim();
+      if (!mensajeUsuario || !juegoActivo) return;
+
+      agregarMensaje(mensajeUsuario, 'user');
+      chatInput.value = '';
+
+      const respuesta = mensajeUsuario.toLowerCase();
+
+      if (respuesta === 'margarito') {
+        agregarMensaje('🎉 ¡Correcto! Has ganado el 35% de descuento. Redirigiendo a WhatsApp...', 'bot');
+        juegoActivo = false;
+
+        setTimeout(() => {
+          const numero = '56920282860';
+          const mensaje = encodeURIComponent('¡Gané el 35% de descuento!');
+          window.location.href = `https://wa.me/${numero}?text=${mensaje}`;
+        }, 2500);
+
+      } else if (respuesta.includes('quién') || respuesta.includes('ayuda') || respuesta.includes('pista')) {
+        agregarMensaje('Te dije... pregunta a Ebonny 😉', 'bot');
+      } else {
+        agregarMensaje('❌ Esa no es la palabra correcta. Serás redirigido fuera del juego...', 'bot');
+        juegoActivo = false;
+        setTimeout(() => {
+          window.location.href = "https://www.google.com";
+        }, 2500);
+      }
+    });
+  </script>
+
+</body>
+</html>
