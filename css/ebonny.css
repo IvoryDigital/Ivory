@@ -1,0 +1,73 @@
+/* Efecto glitch para texto "Ebonny Chatbot" */
+.ebonny-glitch {
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 3px;
+  z-index: 1;
+  animation: shift-ebonny 1.2s ease-in-out infinite alternate;
+  display: inline-block;
+  
+  margin-top: 40px; /* <-- Aquí agregamos margen superior para separar el texto */
+}
+
+.ebonny-glitch:before,
+.ebonny-glitch:after {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: 0.7;
+  pointer-events: none; /* para que no interfiera con el mouse */
+}
+
+.ebonny-glitch:before {
+  animation: glitch-ebonny 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #ff3c00; /* rojo-anaranjado */
+  z-index: -1;
+}
+
+.ebonny-glitch:after {
+  animation: glitch-ebonny 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #00d2ff; /* azul claro */
+  z-index: -2;
+}
+
+@keyframes glitch-ebonny {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 2px); }
+  40%  { transform: translate(-2px, -2px); }
+  60%  { transform: translate(2px, 2px); }
+  80%  { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes shift-ebonny {
+  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+    transform: skewX(0deg);
+  }
+  41% {
+    transform: skewX(6deg);
+  }
+  42% {
+    transform: skewX(-6deg);
+  }
+  59% {
+    transform: skewX(25deg) skewY(7deg);
+  }
+  60% {
+    transform: skewX(-25deg) skewY(-7deg);
+  }
+  63% {
+    transform: skewX(6deg) skewY(-3deg);
+  }
+  70% {
+    transform: skewX(-30deg) skewY(-10deg);
+  }
+  71% {
+    transform: skewX(6deg) skewY(-6deg);
+  }
+}
