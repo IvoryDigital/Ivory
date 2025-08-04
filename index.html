@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW&display=swap" rel="stylesheet" />
 
   <!-- Estilos generales -->
   <link rel="stylesheet" href="css/estilos.css" />
@@ -21,6 +22,25 @@
 
   <!-- ✅ Estilos específicos para el botón del chatbot -->
   <style>
+
+       /* Nombre marca fijo arriba izquierda */
+    #marca-nombre {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      font-family: 'Playwrite AU NSW', serif;
+      font-size: 22px;
+      color: #7edd7f; /* color principal del efecto ebonny */
+      z-index: 1000;
+      user-select: none;
+      cursor: default;
+      background: none;  /* sin fondo */
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      letter-spacing: 1px;
+    }
+
     #chatbot-button-container {
       position: fixed;
       bottom: 80px;
@@ -72,6 +92,8 @@
     }
   </style>
 </head>
+<!-- Nombre de la marca -->
+<div id="marca-nombre" class="ebonny-glitch" aria-label="Marca IvoryDigital">IvoryDigital</div>
 
 <body>
   <!-- Matrix background con baja opacidad (MOVIDO FUERA DEL HEADER) -->
