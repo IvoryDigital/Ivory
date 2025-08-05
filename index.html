@@ -93,7 +93,20 @@
     }
   </style>
 </head>
-
+<script>
+  document.addEventListener('copy', function (e) {
+    // Evita que se copie el contenido completo por defecto
+    e.preventDefault();
+    // Define tu contenido personalizado
+    const texto = window.getSelection().toString();
+    if (texto.trim()) {
+      e.clipboardData.setData('text/plain', texto);
+    } else {
+      // Si no hay selección, copia solo esto o deja vacío
+      e.clipboardData.setData('text/plain', ' ');
+    }
+  });
+</script>
 <body>
     <!-- Nombre de la marca -->
    <div id="marca-nombre" class="ebonny-glitch" aria-label="Marca IvoryDigital">IvoryDigital</div>
