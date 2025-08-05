@@ -93,10 +93,11 @@
     }
   </style>
 </head>
-<!-- Nombre de la marca -->
-<div id="marca-nombre" class="ebonny-glitch" aria-label="Marca IvoryDigital">IvoryDigital</div>
 
 <body>
+    <!-- Nombre de la marca -->
+   <div id="marca-nombre" class="ebonny-glitch" aria-label="Marca IvoryDigital">IvoryDigital</div>
+
   <!-- Matrix background con baja opacidad (MOVIDO FUERA DEL HEADER) -->
   <div class="matrix-container" style="opacity: 0.30; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
     <!-- 30 columnas Matrix -->
@@ -224,9 +225,21 @@
         <img src="image/base3.png" alt="Bases de datos 3" class="imagen-base brillante delay-2" style="order: 3;">
       </div>
 
-      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 20px; font-family: 'Goldman', cursive;">
+      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 10px; font-family: 'Goldman', cursive;">
         Gestiona y protege la información vital de tu negocio con bases de datos diseñadas a tu medida. Desde estructuras simples hasta sistemas complejos que garantizan integridad y escalabilidad.
       </p>
+
+      <!-- Aquí ponemos el "ver más" para la descripción extendida, ocultándola inicialmente -->
+      <p style="font-size: 1em; color: #9ee69a; max-width: 700px; margin: 0 auto 20px; font-family: 'Goldman', cursive; font-style: italic; display:none;" id="desc-bd-extendida">
+        🎯 <strong>¿Para quién está dirigida la creación de Bases de Datos?</strong><br>
+        Para startups y pequeños negocios que necesitan organizar su información sin complicaciones.<br>
+        Para empresas que requieren manejar datos estructurados o no estructurados con seguridad y escalabilidad.<br>
+        Para desarrolladores o emprendedores que desean una solución personalizada y flexible.<br>
+        Para proyectos que necesitan sincronización en tiempo real entre múltiples usuarios o dispositivos.<br>
+        Para quienes buscan integrar bases de datos con apps web o móviles sin perder control.
+      </p>
+
+      <p style="max-width: 700px; margin: 0 auto 20px; color: #45c84a; cursor: pointer; font-family: 'Goldman', cursive; font-weight: 600;" onclick="toggleDescripcion('desc-bd-extendida', this)">ver más...</p>
 
       <div class="box" tabindex="0">
         <button class="button" id="toggle-precios-bd" onclick="togglePrecios('precios-bd', this)">Ver precios</button>
@@ -283,9 +296,21 @@
         Páginas Web
       </h3>
 
-      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 20px; font-family: 'Goldman', cursive;">
+      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 10px; font-family: 'Goldman', cursive;">
         Sitios web que reflejan tu marca, adaptados a móviles y optimizados para brindar una experiencia excepcional.
       </p>
+
+      <!-- Toggle descripción extendida para Páginas Web -->
+      <p style="font-size: 1em; color: #9ee69a; max-width: 700px; margin: 0 auto 20px; font-family: 'Goldman', cursive; font-style: italic; display:none;" id="desc-web-extendida">
+        🎯 <strong>¿Para quién está dirigida la creación de Páginas Web?</strong><br>
+        Para emprendedores que recién comienzan y necesitan visibilidad online.<br>
+        Para negocios físicos que quieren digitalizarse y captar clientes por internet.<br>
+        Para creadores de contenido, profesionales o freelancers que desean mostrar su portafolio.<br>
+        Para pequeñas empresas que quieren integrar funciones como contacto, reservas o catálogo de productos.<br>
+        Para quienes no saben programar pero necesitan una web que funcione y se vea bien.
+      </p>
+
+      <p style="max-width: 700px; margin: 0 auto 20px; color: #45c84a; cursor: pointer; font-family: 'Goldman', cursive; font-weight: 600;" onclick="toggleDescripcion('desc-web-extendida', this)">ver más...</p>
 
       <div class="box" tabindex="0">
         <button class="button" id="toggle-precios-web" onclick="togglePrecios('precios-web', this)">Ver precios</button>
@@ -347,9 +372,21 @@
         <img src="image/bot2.png" alt="Bot 2" class="imagen-base">
       </div>
 
-      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 20px; font-family: 'Goldman', cursive;">
+      <p style="font-size: 1.1em; color: #7edd7f; max-width: 700px; margin: 10px auto 10px; font-family: 'Goldman', cursive;">
         Automatiza tareas repetitivas para ahorrar tiempo y reducir errores, desde bots simples hasta sistemas inteligentes.
       </p>
+
+      <!-- Toggle descripción extendida para Automatizadores -->
+      <p style="font-size: 1em; color: #d9ec10; max-width: 700px; margin: 0 auto 20px; font-family: 'Goldman', cursive; font-style: italic; display:none;" id="desc-bots-extendida">
+        🎯 <strong>¿Para quién están dirigidos los Automatizadores?</strong><br>
+        Para profesionales y empresas que quieren ahorrar tiempo y evitar errores en tareas repetitivas.<br>
+        Para quienes necesitan enviar mensajes automáticos, notificaciones o reportes sin intervención manual.<br>
+        Para negocios que desean integrar diferentes plataformas (WhatsApp, Telegram, email) y centralizar su gestión.<br>
+        Para quienes quieren dar un salto tecnológico sin contratar grandes equipos o aprender programación compleja.<br>
+        Para emprendedores que buscan soluciones inteligentes y escalables a bajo costo.
+      </p>
+
+      <p style="max-width: 700px; margin: 0 auto 20px; color: #47e739; cursor: pointer; font-family: 'Goldman', cursive; font-weight: 600;" onclick="toggleDescripcion('desc-bots-extendida', this)">ver más...</p>
 
       <div class="box" tabindex="0">
         <button class="button" id="toggle-precios-bots" onclick="togglePrecios('precios-bots', this)">Ver precios</button>
@@ -416,6 +453,17 @@
     }
   }
 
+  function toggleDescripcion(id, element) {
+    const desc = document.getElementById(id);
+    if (desc.style.display === "none") {
+      desc.style.display = "block";
+      element.textContent = "ver menos...";
+    } else {
+      desc.style.display = "none";
+      element.textContent = "ver más...";
+    }
+  }
+
   // Activar efecto matrix por 4 segundos al hacer click en cada .box
   document.querySelectorAll('.box').forEach(box => {
     box.addEventListener('click', () => {
@@ -427,6 +475,7 @@
     });
   });
 </script>
+
 
 
 
