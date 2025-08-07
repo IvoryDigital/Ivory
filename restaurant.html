@@ -17,6 +17,11 @@
 </head>
 
 <body>
+	<audio id="miAudio" src="audio/restaurant.mp3" style="display: none;"></audio>
+
+<button id="btnPlayAudio" style="position: fixed; top: 25px; right: 40px; z-index: 9999; background: none; border: none; padding: 0; cursor: pointer;">
+  <img src="images/vinilo.png" alt="Reproducir música" style="width: 50px; height: auto;">
+</button>
 	<header>
 		<div class="container header-expand">
 			<div class="container-logo">
@@ -840,6 +845,17 @@
 	<script src="js/partials.js"></script>
 	<script src="js/home.js"></script>
 	<script src="js/testimonial.js"></script>
+	<script>
+  const audio = document.getElementById('miAudio');
+  const btnPlay = document.getElementById('btnPlayAudio');
+
+  btnPlay.addEventListener('click', () => {
+    audio.volume = 0.2; // volumen al 20%
+    audio.play();
+    btnPlay.style.display = 'none'; // ocultar el botón al reproducir
+  });
+</script>
+
 </body>
 
 </html>
