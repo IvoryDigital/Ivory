@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanspage Habbo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #6b5b95;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .post h3 {
+            margin: 0 0 10px 0;
+        }
+        .comment-section {
+            margin-top: 10px;
+        }
+        .comment-section input {
+            width: 80%;
+            padding: 5px;
+        }
+        .comment-section button {
+            padding: 5px 10px;
+        }
+        .profile, .chat, .notifications {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Fanspage Habbo</h1>
+        <nav>
+            <a href="#" onclick="showScreen('home')">Inicio</a>
+            <a href="#" onclick="showScreen('feed')">Feed</a>
+            <a href="#" onclick="showScreen('profile')">Perfil</a>
+            <a href="#" onclick="showScreen('chat')">Chat</a>
+            <a href="#" onclick="showScreen('notifications')">Notificaciones</a>
+        </nav>
+    </header>
+
+    <!-- Pantallas -->
+    <div class="container">
+
+        <!-- Home / Invitado -->
+        <div id="home" class="screen show">
+            <h2>Bienvenido a la Fanspage Habbo</h2>
+            <p>Puedes explorar el sitio como invitado o registrarte para interactuar con otros usuarios.</p>
+            <button onclick="alert('Modo invitado activado')">Explorar como invitado</button>
+            <button onclick="showScreen('login')">Registrarse / Login</button>
+        </div>
+
+        <!-- Login / Registro -->
+        <div id="login" class="screen">
+            <h2>Login / Registro</h2>
+            <form onsubmit="alert('Funcionalidad de login simulada'); return false;">
+                <input type="text" placeholder="Usuario" required><br><br>
+                <input type="email" placeholder="Correo" required><br><br>
+                <input type="password" placeholder="Contraseña" required><br><br>
+                <button type="submit">Ingresar</button>
+            </form>
+            <button onclick="showScreen('home')">Volver al inicio</button>
+        </div>
+
+        <!-- Feed / Muro -->
+        <div id="feed" class="screen">
+            <h2>Feed de publicaciones</h2>
+
+            <div class="post">
+                <h3>Usuario1</h3>
+                <p>¡Hola fans de Habbo! ¿Cuál es tu habitación favorita?</p>
+                <div class="comment-section">
+                    <input type="text" placeholder="Escribe un comentario">
+                    <button>Comentar</button>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Usuario2</h3>
+                <p>Hoy descubrí un nuevo pixel raro 😎</p>
+                <div class="comment-section">
+                    <input type="text" placeholder="Escribe un comentario">
+                    <button>Comentar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perfil de usuario -->
+        <div id="profile" class="screen profile">
+            <h2>Perfil de Usuario</h2>
+            <p>Avatar: [imagen]</p>
+            <p>Nombre: Usuario</p>
+            <p>Publicaciones: 5</p>
+            <p>Likes recibidos: 12</p>
+            <button>Editar perfil</button>
+        </div>
+
+        <!-- Chat -->
+        <div id="chat" class="screen chat">
+            <h2>Chat en tiempo real</h2>
+            <p>(Simulación de chat)</p>
+            <input type="text" placeholder="Escribe un mensaje">
+            <button>Enviar</button>
+        </div>
+
+        <!-- Notificaciones -->
+        <div id="notifications" class="screen notifications">
+            <h2>Notificaciones</h2>
+            <ul>
+                <li>Usuario1 comentó tu publicación.</li>
+                <li>Usuario2 le dio like a tu post.</li>
+                <li>Nuevo seguidor: Usuario3.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('show'));
+            document.getElementById(screenId).classList.add('show');
+        }
+    </script>
+</body>
+</html>
